@@ -51,7 +51,7 @@ export default function Faq() {
       {/* 3D Sliding Section Label */}
       <SectionLabel text="Frequently Asked Questions" sectionId="faq" />
 
-      <div className="mx-auto max-w-[800px] px-6 relative z-10 pt-20 sm:pt-24 md:pt-28">
+      <div className="mx-auto max-w-4xl px-6 relative z-10 pt-20 sm:pt-24 md:pt-28">
 
         {/* Accordion List */}
         <div className="space-y-3">

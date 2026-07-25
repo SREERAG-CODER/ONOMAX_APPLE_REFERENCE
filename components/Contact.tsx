@@ -34,7 +34,7 @@ export default function Contact() {
       {/* 3D Sliding Section Label */}
       <SectionLabel text="Deploy Autonomy" sectionId="contact" />
 
-      <div className="mx-auto max-w-[1200px] px-6 md:px-12 relative z-10 pt-20 sm:pt-24 md:pt-28">
+      <div className="mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 relative z-10 pt-20 sm:pt-24 md:pt-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
           {/* LEFT: Text description */}

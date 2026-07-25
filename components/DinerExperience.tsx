@@ -21,6 +21,7 @@ export default function DinerExperience() {
   const { orders, placeOrder, clearOrder } = useOrders();
   const [selectedTableId, setSelectedTableId] = useState<string>("T7");
   const [step, setStep] = useState<SimStep>("scan");
+  const [mobileCardIndex, setMobileCardIndex] = useState(0);
   const [cart, setCart] = useState<MenuItem[]>([]);
   const [activeStage, setActiveStage] = useState<number>(0);
   const [selectedCategory, setSelectedCategory] = useState<string>("popular");
@@ -110,7 +111,7 @@ export default function DinerExperience() {
       {/* 3D Sliding Section Label */}
       <SectionLabel text="Frictionless Ordering" sectionId="ordering" />
 
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10 pt-20 sm:pt-24 md:pt-28 space-y-8">
+      <div className="mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 relative z-10 pt-20 sm:pt-24 md:pt-28 space-y-8">
         
         {/* Section Description */}
         <div className="max-w-2xl space-y-3 mb-10">
@@ -119,17 +120,25 @@ export default function DinerExperience() {
           </p>
         </div>
 
-        {/* Apple-Style Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          {/* Card 1: Huge Full-Width Card (Spans 12 cols) */}
-          <div className="lg:col-span-12 rounded-[32px] bg-white border border-black/[0.04] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
+        {/* Cards: shared 12-col grid on desktop, carousel + static card on mobile */}
+        <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+
+          {/* Carousel wrapper — slides Cards 1 & 2 on mobile, transparent on desktop */}
+          <div className="relative lg:contents group/carousel">
+            <div className="overflow-hidden lg:contents">
+              <div 
+                className="flex lg:contents gap-8 items-stretch transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(calc(-${mobileCardIndex * 100}% - ${mobileCardIndex * 2}rem))` }}
+              >
+              
+                {/* Card 1: Huge Full-Width Card (Spans 12 cols) */}
+                <div className="w-full flex-shrink-0 lg:col-span-12 rounded-[32px] bg-white border border-black/[0.04] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
             {/* Left copy block */}
             <div className="p-8 md:p-12 flex flex-col justify-between flex-1 max-w-xl">
               <div className="space-y-4">
                 <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Instant Digital Menu</span>
                 <h3 className="text-2xl md:text-3xl font-black text-black leading-tight">
-                  Zero-App QR Ordering. No downloads.
+                  Zero-App QR Ordering. <span className="text-black/40">No downloads.</span>
                 </h3>
                 <p className="text-xs text-black/50 leading-relaxed font-medium">
                   Diners scan a sleek table-specific QR code to launch the menu instantly. No app store downloads, registrations, or login friction. Allergen-filtering categories and high-impact culinary food visuals make selections fast, direct, and satisfying.
@@ -148,17 +157,17 @@ export default function DinerExperience() {
                 src="/qr-menu-scanning.png"
                 alt="Scanning QR code to view digital menu"
                 fill
-                className="object-cover transition-all duration-700 grayscale group-hover:scale-105 group-hover:grayscale-0"
+                className={`object-cover transition-all duration-700 ${mobileCardIndex === 0 ? "grayscale-0" : "grayscale"} lg:grayscale group-hover:scale-105 lg:group-hover:grayscale-0`}
               />
             </div>
           </div>
 
           {/* Card 2: Left column card (Spans 6 cols) */}
-          <div className="lg:col-span-6 rounded-[32px] bg-white border border-black/[0.04] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-between group min-h-[500px]">
+          <div className="w-full flex-shrink-0 lg:col-span-6 rounded-[32px] bg-white border border-black/[0.04] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-between group min-h-[500px] mb-8 lg:mb-0">
             <div className="p-8 space-y-4">
               <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Instant Scan & Checkout</span>
               <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
-                Scan. Select. Pay. Done.
+                Scan. Select. <span className="text-black/40">Pay. Done.</span>
               </h3>
               <p className="text-xs text-black/50 leading-relaxed font-medium">
                 Accepts Apple Pay, instant credit cards, and local payment methods natively. Payments authorize instantly and route immediately to the kitchen station.
@@ -171,12 +180,25 @@ export default function DinerExperience() {
                 src="/qr-ordering.png"
                 alt="Scanning table QR code"
                 fill
-                className="object-cover transition-all duration-700 grayscale group-hover:scale-105 group-hover:grayscale-0"
+                className={`object-cover transition-all duration-700 ${mobileCardIndex === 1 ? "grayscale-0" : "grayscale"} lg:grayscale group-hover:scale-105 lg:group-hover:grayscale-0`}
               />
             </div>
           </div>
 
-          {/* Card 3: Right column card (Spans 6 cols) — Interactive Simulator */}
+              </div>
+            </div>
+
+            {/* Mobile Next Arrow */}
+            <button
+              onClick={() => setMobileCardIndex((prev) => (prev + 1) % 2)}
+              className="lg:hidden absolute top-1/2 -right-3 -translate-y-1/2 z-20 w-10 h-10 bg-white border border-black/5 rounded-full shadow-lg flex items-center justify-center text-black hover:bg-gray-50 active:scale-95 transition-all"
+              aria-label="Next Card"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Card 3: Phone Simulator — always visible, participates in desktop grid */}
           <div className="lg:col-span-6 rounded-[32px] bg-[#fafafa] border border-black/[0.04] p-8 flex flex-col items-center justify-center relative overflow-hidden min-h-[500px]">
             <div className="absolute top-6 left-8 text-left">
               <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Live Demo</span>
@@ -442,7 +464,6 @@ export default function DinerExperience() {
 
             </div>
           </div>
-
         </div>
       </div>
     </section>

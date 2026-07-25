@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import SectionLabel from "./SectionLabel";
 
 export default function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
+  const [mobileCardIndex, setMobileCardIndex] = useState(0);
 
   const starterPrice = billingPeriod === "monthly" ? 9999 : 7999;
   const proPrice = billingPeriod === "monthly" ? 19999 : 15999;
@@ -52,7 +53,7 @@ export default function Pricing() {
       {/* 3D Sliding Section Label */}
       <SectionLabel text="Plans for Every Restaurant" sectionId="pricing" />
 
-      <div className="mx-auto max-w-[1200px] px-6 md:px-12 relative z-10 pt-20 sm:pt-24 md:pt-28">
+      <div className="mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 relative z-10 pt-20 sm:pt-24 md:pt-28">
         
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
@@ -87,11 +88,16 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">
-          
-          {/* STARTER */}
-          <div className="group rounded-[32px] border border-black/[0.06] bg-gradient-to-b from-[#fafafa] to-white p-8 flex flex-col justify-between shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-black/[0.04] hover:scale-[1.02] hover:border-black/10">
+        {/* Pricing Grid / Mobile Carousel */}
+        <div className="relative max-w-5xl mx-auto group/carousel">
+          <div className="overflow-hidden md:overflow-visible">
+            <div 
+              className="flex md:grid md:grid-cols-3 gap-6 items-stretch transition-transform duration-500 ease-in-out md:!transform-none"
+              style={{ transform: `translateX(calc(-${mobileCardIndex * 100}% - ${mobileCardIndex * 1.5}rem))` }}
+            >
+              
+              {/* STARTER */}
+              <div className="w-full flex-shrink-0 md:w-auto group rounded-[32px] border border-black/[0.06] bg-gradient-to-b from-[#fafafa] to-white p-8 flex flex-col justify-between shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-black/[0.04] hover:scale-[1.02] hover:border-black/10">
             <div className="space-y-6">
               <div className="space-y-2">
                 <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Starter Plan</span>
@@ -133,7 +139,7 @@ export default function Pricing() {
           </div>
 
           {/* PRO (HIGHLIGHTED — Dark Premium Card) */}
-          <div className="group relative rounded-[32px] bg-gradient-to-b from-[#1a1a1a] to-[#111] p-8 flex flex-col justify-between shadow-2xl shadow-black/20 transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_25px_60px_rgba(101,163,13,0.15)] overflow-hidden">
+          <div className="w-full flex-shrink-0 md:w-auto group relative rounded-[32px] bg-gradient-to-b from-[#1a1a1a] to-[#111] p-8 flex flex-col justify-between shadow-2xl shadow-black/20 transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_25px_60px_rgba(101,163,13,0.15)] overflow-hidden">
             {/* Lime glow bleed */}
             <div className="absolute -top-20 -right-20 w-60 h-60 bg-lime-500/10 rounded-full blur-[80px] pointer-events-none" />
             <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-lime-500/5 rounded-full blur-[60px] pointer-events-none" />
@@ -184,7 +190,7 @@ export default function Pricing() {
           </div>
 
           {/* ENTERPRISE */}
-          <div className="group rounded-[32px] border border-black/[0.06] bg-gradient-to-b from-[#fafafa] to-white p-8 flex flex-col justify-between shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-black/[0.04] hover:scale-[1.02] hover:border-lime-500/20">
+          <div className="w-full flex-shrink-0 md:w-auto group rounded-[32px] border border-black/[0.06] bg-gradient-to-b from-[#fafafa] to-white p-8 flex flex-col justify-between shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-black/[0.04] hover:scale-[1.02] hover:border-lime-500/20">
             <div className="space-y-6">
               <div className="space-y-2">
                 <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Enterprise Plan</span>
@@ -222,6 +228,17 @@ export default function Pricing() {
             </div>
           </div>
 
+            </div>
+          </div>
+
+          {/* Mobile Next Arrow */}
+          <button
+            onClick={() => setMobileCardIndex((prev) => (prev + 1) % 3)}
+            className="md:hidden absolute top-1/2 -right-3 -translate-y-1/2 z-20 w-10 h-10 bg-white border border-black/5 rounded-full shadow-lg flex items-center justify-center text-black hover:bg-gray-50 active:scale-95 transition-all"
+            aria-label="Next Plan"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
 
       </div>

@@ -40,7 +40,7 @@ export default function BusinessIntelligence() {
       {/* 3D Sliding Section Label */}
       <SectionLabel text="Your Restaurant at a Glance" sectionId="intelligence" />
 
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10 pt-20 sm:pt-24 md:pt-28 space-y-8">
+      <div className="mx-auto w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 relative z-10 pt-20 sm:pt-24 md:pt-28 space-y-8">
         
         {/* Section Description */}
         <div className="max-w-2xl space-y-3 mb-10">
@@ -59,7 +59,7 @@ export default function BusinessIntelligence() {
               <div className="space-y-4">
                 <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Restaurant Management</span>
                 <h3 className="text-2xl md:text-3xl font-black text-black leading-tight">
-                  Real-Time Insights & Control.
+                  Real-Time Insights <span className="text-black/40">& Control.</span>
                 </h3>
                 <p className="text-xs text-black/50 leading-relaxed font-medium">
                   Keep track of daily orders, revenue, and table turnover times instantly. Monitor robot delivery progress and battery status from your dashboard. Orders go straight from the customer to the kitchen with zero delay.
@@ -78,7 +78,7 @@ export default function BusinessIntelligence() {
                 src="/analytics-dashboard.png"
                 alt="ONOMEX Analytics Dashboard on Tablet"
                 fill
-                className="object-cover transition-all duration-700 grayscale group-hover:scale-105 group-hover:grayscale-0"
+                className="object-cover transition-all duration-700 grayscale-0 lg:grayscale group-hover:scale-105 lg:group-hover:grayscale-0"
               />
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function BusinessIntelligence() {
             <div className="space-y-4">
               <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Effortless Ownership</span>
               <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
-                Run Your Floor on Autopilot.
+                Run Your Floor <span className="text-black/40">on Autopilot.</span>
               </h3>
               <p className="text-xs text-black/50 leading-relaxed font-medium">
                 Focus on your food and your guests. ONOMEX handles the logistics seamlessly, boosting your bottom line with zero extra effort.
