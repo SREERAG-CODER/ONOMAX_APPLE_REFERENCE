@@ -269,7 +269,7 @@ export default function Hero() {
                     ? currentTable.status === "preparing"
                       ? "Loading Trays…"
                       : currentTable.status === "delivering"
-                        ? "Robot In Route…"
+                        ? "Robot En Route…"
                         : currentTable.status === "unlocked"
                           ? "Delivered ✓"
                           : "Dispatching…"
