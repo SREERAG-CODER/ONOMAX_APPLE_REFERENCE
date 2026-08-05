@@ -97,7 +97,7 @@ export default function Pricing() {
             >
               
               {/* STARTER */}
-              <div className="w-full flex-shrink-0 md:w-auto group rounded-[32px] border border-black/[0.06] bg-gradient-to-b from-[#fafafa] to-white p-8 flex flex-col justify-between shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-black/[0.04] hover:scale-[1.02] hover:border-black/10">
+              <div className="w-full flex-shrink-0 md:w-auto group rounded-[32px] border border-black/10 bg-gray-200 p-8 flex flex-col justify-between shadow-lg transition-all duration-500 hover:shadow-xl hover:shadow-black/[0.04] hover:scale-[1.02] hover:border-black/20">
             <div className="space-y-6">
               <div className="space-y-2">
                 <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Starter Plan</span>
@@ -190,7 +190,7 @@ export default function Pricing() {
           </div>
 
           {/* ENTERPRISE */}
-          <div className="w-full flex-shrink-0 md:w-auto group rounded-[32px] border border-black/[0.06] bg-gradient-to-b from-[#fafafa] to-white p-8 flex flex-col justify-between shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-black/[0.04] hover:scale-[1.02] hover:border-lime-500/20">
+          <div className="w-full flex-shrink-0 md:w-auto group rounded-[32px] border border-black/10 bg-gray-200 p-8 flex flex-col justify-between shadow-lg transition-all duration-500 hover:shadow-xl hover:shadow-black/[0.04] hover:scale-[1.02] hover:border-lime-500/20">
             <div className="space-y-6">
               <div className="space-y-2">
                 <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Enterprise Plan</span>

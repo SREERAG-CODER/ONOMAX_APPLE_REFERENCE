@@ -106,7 +106,7 @@ export default function Hero() {
         </div>
 
         {/* Premium Product Interactive Mockup (Live Floor View) */}
-        <div className="w-full max-w-4xl mx-auto rounded-3xl border border-black/5 bg-[#fafafa]/80 backdrop-blur-md p-6 md:p-8 shadow-xl shadow-black/5 relative overflow-hidden">
+        <div className="w-full max-w-4xl mx-auto rounded-3xl border border-black/20 bg-[#fafafa]/80 backdrop-blur-md p-6 md:p-8 shadow-xl shadow-black/5 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-lime-500/30 via-lime-500 to-lime-500/30" />
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
@@ -196,7 +196,7 @@ export default function Hero() {
             </div>
 
             {/* Right Column: Telemetry details */}
-            <div className="md:col-span-5 bg-white border border-black/5 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+            <div className="md:col-span-5 bg-white border border-black/20 rounded-2xl p-5 flex flex-col justify-between shadow-md">
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <div className="space-y-0.5">

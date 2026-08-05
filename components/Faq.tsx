@@ -60,8 +60,8 @@ export default function Faq() {
             return (
               <div
                 key={index}
-                className={`rounded-[24px] border bg-white overflow-hidden transition-all duration-400 ${
-                  isOpen ? "border-lime-500/20 shadow-lg shadow-lime-500/[0.04]" : "border-black/[0.06] shadow-sm hover:border-black/10 hover:shadow-md"
+                className={`rounded-[24px] border bg-gray-200 overflow-hidden transition-all duration-400 ${
+                  isOpen ? "border-lime-500/20 shadow-lg shadow-lime-500/[0.04]" : "border-black/10 shadow-lg hover:border-black/20 hover:shadow-xl"
                 }`}
               >
                 <button

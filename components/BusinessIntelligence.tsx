@@ -53,7 +53,7 @@ export default function BusinessIntelligence() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Card 1: Huge Full-Width Card (Spans 12 cols) */}
-          <div className="lg:col-span-12 rounded-[32px] bg-white border border-black/[0.04] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
+          <div className="lg:col-span-12 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
             {/* Left copy block */}
             <div className="p-8 md:p-12 flex flex-col justify-between flex-1 max-w-xl">
               <div className="space-y-4">
@@ -84,7 +84,7 @@ export default function BusinessIntelligence() {
           </div>
 
           {/* Card 2: Left column card (Spans 7 cols) — Interactive Dashboard Mockup */}
-          <div className="lg:col-span-7 rounded-[32px] bg-white border border-black/[0.04] p-6 md:p-8 shadow-sm relative min-h-[500px] flex flex-col justify-between">
+          <div className="lg:col-span-7 rounded-[32px] bg-gray-200 border border-black/10 p-6 md:p-8 shadow-lg relative min-h-[500px] flex flex-col justify-between">
             
             <div>
               {/* Custom Tab Selector */}
@@ -263,7 +263,7 @@ export default function BusinessIntelligence() {
           </div>
 
           {/* Card 3: Right column card (Spans 5 cols) — Owner Benefits Showcase */}
-          <div className="lg:col-span-5 rounded-[32px] bg-[#fafafa] border border-black/[0.04] p-8 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[500px] group">
+          <div className="lg:col-span-5 rounded-[32px] bg-gray-200 border border-black/10 p-8 shadow-lg relative overflow-hidden flex flex-col justify-between min-h-[500px] group">
             
             <div className="space-y-4">
               <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Effortless Ownership</span>

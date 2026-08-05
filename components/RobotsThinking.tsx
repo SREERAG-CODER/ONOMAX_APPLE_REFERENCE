@@ -67,7 +67,7 @@ export default function RobotsThinking() {
             >
               
               {/* Card 1: Huge Full-Width Card (Spans 12 cols) */}
-              <div className="w-full flex-shrink-0 lg:w-auto lg:col-span-12 rounded-[32px] bg-gradient-to-b from-[#fafafa] to-white border border-black/[0.04] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
+              <div className="w-full flex-shrink-0 lg:w-auto lg:col-span-12 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
             {/* Left copy block */}
             <div className="p-8 md:p-12 flex flex-col justify-between flex-1 max-w-xl">
               <div className="space-y-4">
@@ -98,7 +98,7 @@ export default function RobotsThinking() {
           </div>
 
           {/* Card 2: Interactive Experience Flow (Left side) */}
-          <div className="w-full flex-shrink-0 lg:w-auto lg:col-span-6 rounded-[32px] bg-[#fafafa] border border-black/[0.04] p-8 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[500px]">
+          <div className="w-full flex-shrink-0 lg:w-auto lg:col-span-6 rounded-[32px] bg-gray-200 border border-black/10 p-8 shadow-lg relative overflow-hidden flex flex-col justify-between min-h-[500px]">
             <div className="space-y-4 mb-8">
               <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">The Journey</span>
               <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
@@ -142,7 +142,7 @@ export default function RobotsThinking() {
           </div>
 
           {/* Card 3: Dynamic Image Showcase (Right side) */}
-          <div className="w-full flex-shrink-0 lg:w-auto lg:col-span-6 rounded-[32px] bg-black border border-black/[0.04] shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[500px] group">
+          <div className="w-full flex-shrink-0 lg:w-auto lg:col-span-6 rounded-[32px] bg-black border border-black/20 shadow-lg relative overflow-hidden flex flex-col justify-between min-h-[500px] group">
             {steps.map((step, idx) => (
               <div
                 key={idx}

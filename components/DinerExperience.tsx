@@ -132,7 +132,7 @@ export default function DinerExperience() {
               >
               
                 {/* Card 1: Huge Full-Width Card (Spans 12 cols) */}
-                <div className="w-full flex-shrink-0 lg:col-span-12 rounded-[32px] bg-white border border-black/[0.04] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
+                <div className="w-full flex-shrink-0 lg:col-span-12 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
             {/* Left copy block */}
             <div className="p-8 md:p-12 flex flex-col justify-between flex-1 max-w-xl">
               <div className="space-y-4">
@@ -163,7 +163,7 @@ export default function DinerExperience() {
           </div>
 
           {/* Card 2: Left column card (Spans 6 cols) */}
-          <div className="w-full flex-shrink-0 lg:col-span-6 rounded-[32px] bg-white border border-black/[0.04] shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-between group min-h-[500px] mb-8 lg:mb-0">
+          <div className="w-full flex-shrink-0 lg:col-span-6 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-between group min-h-[500px] mb-8 lg:mb-0">
             <div className="p-8 space-y-4">
               <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Instant Scan & Checkout</span>
               <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
@@ -199,7 +199,7 @@ export default function DinerExperience() {
           </div>
 
           {/* Card 3: Phone Simulator — always visible, participates in desktop grid */}
-          <div className="lg:col-span-6 rounded-[32px] bg-[#fafafa] border border-black/[0.04] p-8 flex flex-col items-center justify-center relative overflow-hidden min-h-[500px]">
+          <div className="lg:col-span-6 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg p-8 flex flex-col items-center justify-center relative overflow-hidden min-h-[500px]">
             <div className="absolute top-6 left-8 text-left">
               <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Live Demo</span>
               <h4 className="text-xs font-bold text-black uppercase tracking-wider mt-0.5">Diner Ordering Flow</h4>

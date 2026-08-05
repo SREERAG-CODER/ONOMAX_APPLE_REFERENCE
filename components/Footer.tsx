@@ -80,7 +80,7 @@ export default function Footer() {
                 alt="X"
                 width={18}
                 height={18}
-                className="w-4.5 h-4.5 invert"
+                className="w-4.5 h-4.5 brightness-0 invert"
               />
             </Link>
             <Link href="#" aria-label="Instagram" className="hover:opacity-75 transition-opacity">
@@ -89,7 +89,7 @@ export default function Footer() {
                 alt="Instagram"
                 width={18}
                 height={18}
-                className="w-4.5 h-4.5 invert"
+                className="w-4.5 h-4.5 brightness-0 invert"
               />
             </Link>
             <Link href="#" aria-label="Discord" className="hover:opacity-75 transition-opacity">
