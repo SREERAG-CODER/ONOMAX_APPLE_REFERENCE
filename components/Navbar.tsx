@@ -26,8 +26,8 @@ export default function Navbar() {
       <div
         className={`pointer-events-auto flex items-center justify-between transition-all duration-500 ease-out bg-black/90 backdrop-blur-xl border border-white/[0.08] shadow-lg shadow-black/20 ${
           isScrolled
-            ? "rounded-full px-4 py-2 max-w-[720px] w-full"
-            : "rounded-[28px] px-6 py-3 max-w-[860px] w-full"
+            ? "rounded-full px-4 py-2 max-w-[840px] w-full"
+            : "rounded-[28px] px-6 py-3 max-w-[980px] w-full"
         }`}
       >
         {/* Logo */}

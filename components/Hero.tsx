@@ -62,11 +62,11 @@ export default function Hero() {
       <div className="mx-auto flex flex-col items-center max-w-[1200px] w-full px-6 md:px-12 relative z-10 my-auto">
 
         {/* Editorial Text Block */}
-        <div className="text-center max-w-4xl space-y-2 mb-16">
+        <div className="text-center max-w-6xl space-y-2 mb-16">
 
           {/* Main Headline Tagline */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-black leading-[1.05] animate-in fade-in slide-in-from-bottom-6 duration-1000">
-            Autonomous Restaurant Intelligence
+            <span className="text-black/55">Autonomous</span><br />Restaurant Intelligence
           </h1>
 
           {/* Powered by */}
