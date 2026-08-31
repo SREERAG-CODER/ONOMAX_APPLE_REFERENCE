@@ -52,264 +52,196 @@ export default function BusinessIntelligence() {
         {/* Apple-Style Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          {/* Card 1: Huge Full-Width Card (Spans 12 cols) */}
-          <div className="lg:col-span-12 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
+          {/* Card 1: Huge Full-Width Card (Spans 12 cols) — Dark Premium Command Center */}
+          <div className="lg:col-span-12 rounded-[32px] bg-[#09090b] border border-white/[0.06] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px] relative">
+            
+            {/* Top edge glow */}
+            <div className="absolute top-0 inset-x-12 h-px bg-gradient-to-r from-transparent via-lime-500/30 to-transparent" />
+
             {/* Left copy block */}
-            <div className="p-8 md:p-12 flex flex-col justify-between flex-1 max-w-xl">
-              <div className="space-y-4">
-                <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Restaurant Management</span>
-                <h3 className="text-2xl md:text-3xl font-black text-black leading-tight">
-                  Real-Time Insights <span className="text-black/40">& Control.</span>
+            <div className="p-8 md:p-12 flex flex-col justify-between flex-1 max-w-xl relative z-10">
+              <div className="space-y-5">
+                <span className="text-[10px] font-mono tracking-[0.2em] text-lime-400 uppercase block font-bold">Restaurant Management</span>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-[1.1] tracking-tight">
+                  Real-Time Insights <br/><span className="bg-gradient-to-r from-lime-400 to-teal-400 bg-clip-text text-transparent">& Control.</span>
                 </h3>
-                <p className="text-xs text-black/50 leading-relaxed font-medium">
-                  Keep track of daily orders, revenue, and table turnover times instantly. Monitor robot delivery progress and battery status from your dashboard. Orders go straight from the customer to the kitchen with zero delay.
+                <p className="text-sm text-white/40 leading-relaxed font-medium max-w-md">
+                  Keep track of daily orders, revenue, and table turnover times instantly. Monitor robot delivery progress and battery status from your dashboard.
                 </p>
+
+                {/* Live Metric Pills */}
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <div className="flex items-center gap-2.5 bg-white/[0.04] border border-white/[0.06] rounded-2xl px-4 py-2.5">
+                    <div className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
+                    <span className="text-[11px] text-white/50 font-medium">Orders</span>
+                    <span className="text-sm font-black text-white font-mono">{kpis.orders}</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 bg-white/[0.04] border border-white/[0.06] rounded-2xl px-4 py-2.5">
+                    <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+                    <span className="text-[11px] text-white/50 font-medium">Revenue</span>
+                    <span className="text-sm font-black text-teal-400 font-mono">₹{(kpis.revenue / 1000).toFixed(1)}k</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 bg-white/[0.04] border border-white/[0.06] rounded-2xl px-4 py-2.5">
+                    <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[11px] text-white/50 font-medium">Deliveries</span>
+                    <span className="text-sm font-black text-white font-mono">{kpis.deliveries}</span>
+                  </div>
+                </div>
               </div>
-              <div className="pt-6">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-lime-700">
+
+              <div className="pt-8">
+                <span className="inline-flex items-center gap-2 text-xs font-bold text-lime-400 bg-lime-400/[0.08] border border-lime-400/20 rounded-full px-4 py-2 transition-all duration-300 group-hover:bg-lime-400/[0.15]">
                   Works with your existing POS systems
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </span>
               </div>
             </div>
+
             {/* Right image block */}
             <div className="relative flex-1 min-h-[300px] md:min-h-auto overflow-hidden">
               <Image
                 src="/analytics-dashboard.png"
                 alt="ONOMEX Analytics Dashboard on Tablet"
                 fill
-                className="object-cover transition-all duration-700 grayscale-0 lg:grayscale group-hover:scale-105 lg:group-hover:grayscale-0"
+                className="object-cover transition-all duration-700 group-hover:scale-105"
               />
+              {/* Gradient overlay for seamless blend */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#09090b] via-[#09090b]/60 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/40 to-transparent pointer-events-none" />
             </div>
+
+            {/* Ambient glow */}
+            <div className="absolute -bottom-32 left-1/4 w-96 h-96 bg-lime-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
           </div>
 
-          {/* Card 2: Left column card (Spans 7 cols) — Interactive Dashboard Mockup */}
-          <div className="lg:col-span-7 rounded-[32px] bg-gray-200 border border-black/10 p-6 md:p-8 shadow-lg relative min-h-[500px] flex flex-col justify-between">
+          {/* Card 2: Left column card (Spans 7 cols) — ROI & Profit Calculator */}
+          <div className="lg:col-span-7 rounded-[32px] bg-gray-200 border border-black/10 p-6 md:p-8 shadow-lg relative min-h-[500px] flex flex-col group">
             
-            <div>
-              {/* Custom Tab Selector */}
-              <div className="flex gap-2 p-1.5 rounded-2xl border border-black/5 bg-gray-100/80 self-start shadow-sm mb-6">
-                <button
-                  onClick={() => setActiveRole("owner")}
-                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 ${
-                    activeRole === "owner"
-                      ? "bg-white border-black/5 text-black shadow-sm"
-                      : "border-transparent text-black/40 hover:text-black/60"
-                  }`}
-                >
-                  Owner View
-                </button>
-                <button
-                  onClick={() => setActiveRole("kitchen")}
-                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 ${
-                    activeRole === "kitchen"
-                      ? "bg-white border-black/5 text-black shadow-sm"
-                      : "border-transparent text-black/40 hover:text-black/60"
-                  }`}
-                >
-                  Kitchen view
-                </button>
-                <button
-                  onClick={() => setActiveRole("staff")}
-                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-300 ${
-                    activeRole === "staff"
-                      ? "bg-white border-black/5 text-black shadow-sm"
-                      : "border-transparent text-black/40 hover:text-black/60"
-                  }`}
-                >
-                  Staff view
-                </button>
+            {/* Header Info */}
+            <div className="flex justify-between items-center border-b border-black/5 pb-4 mb-8">
+              <div>
+                <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Financial Impact</span>
+                <h4 className="text-lg font-bold text-black flex items-center gap-2 mt-1">
+                  <TrendingUp className="w-5 h-5 text-lime-700" />
+                  Estimated Monthly Profit
+                </h4>
               </div>
+            </div>
 
-              {/* Header Info */}
-              <div className="flex justify-between items-center border-b border-black/5 pb-4 mb-6">
-                <div>
-                  <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">System Overview</span>
-                  <h4 className="text-sm font-bold text-black flex items-center gap-1.5 mt-0.5">
-                    <UserCheck className="w-4 h-4 text-lime-700" />
-                    {activeRole === "owner" ? "Owner Dashboard" : activeRole === "kitchen" ? "Kitchen Display" : "Staff View"}
-                  </h4>
+            <div className="flex-1 flex flex-col justify-center space-y-10 relative z-10">
+              {/* Massive Profit Number */}
+              <div className="text-center relative">
+                {/* Subtle glow behind number */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-lime-400/20 blur-3xl rounded-full" />
+                
+                <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block mb-2 relative z-10">Net Increase in Revenue</span>
+                <div className="flex items-baseline justify-center gap-1 relative z-10">
+                  <span className="text-2xl font-bold text-lime-700">₹</span>
+                  <span className="text-6xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter">73,500</span>
+                  <span className="text-sm font-bold text-black/40">/mo</span>
                 </div>
               </div>
 
-              {/* DYNAMIC ROLE VIEWS */}
-              <div className="flex-1">
+              {/* Profit Breakdown Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 
-                {/* 1. OWNER ROLE */}
-                {activeRole === "owner" && (
-                  <div className="space-y-6 animate-in fade-in duration-300">
-                    {/* Metrics Grid */}
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="p-4 border border-black/5 rounded-2xl bg-gray-50 flex flex-col justify-between">
-                        <span className="text-[9px] font-mono text-black/40 uppercase tracking-wider">Orders Today</span>
-                        <span className="text-2xl font-black text-black mt-2 font-mono">{kpis.orders}</span>
-                      </div>
-                      <div className="p-4 border border-black/5 rounded-2xl bg-gray-50 flex flex-col justify-between">
-                        <span className="text-[9px] font-mono text-black/40 uppercase tracking-wider">Revenue Today</span>
-                        <span className="text-2xl font-black text-lime-700 mt-2 font-mono">₹{(kpis.revenue / 1000).toFixed(1)}k</span>
-                      </div>
-                      <div className="p-4 border border-black/5 rounded-2xl bg-gray-50 flex flex-col justify-between">
-                        <span className="text-[9px] font-mono text-black/40 uppercase tracking-wider">Robot Deliveries</span>
-                        <span className="text-2xl font-black text-black mt-2 font-mono">{kpis.deliveries}</span>
-                      </div>
+                {/* Savings Card */}
+                <div className="bg-white p-5 md:p-6 rounded-[24px] border border-black/5 shadow-sm relative overflow-hidden group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-black/40 group-hover:scale-110 transition-transform">
+                      <Users className="w-5 h-5" />
                     </div>
-
-                    {/* Fleet Health Table */}
-                    <div className="space-y-3">
-                      <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Live Robot Delivery Status</span>
-                      
-                      <div className="border border-black/5 rounded-2xl overflow-hidden text-xs">
-                        <table className="w-full text-left border-collapse">
-                          <thead>
-                            <tr className="bg-gray-50 text-black/40 border-b border-black/5 font-mono text-[9px] uppercase">
-                              <th className="p-3">Robot ID</th>
-                              <th className="p-3">Battery</th>
-                              <th className="p-3">Occupancy</th>
-                              <th className="p-3">Current Task</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr className="border-b border-black/5">
-                              <td className="p-3 font-semibold text-black">OM-X1</td>
-                              <td className="p-3">
-                                <span className="flex items-center gap-1"><Battery className="w-4 h-4 text-lime-600 fill-lime-100" /> 88%</span>
-                              </td>
-                              <td className="p-3 text-black/70">2/3 Trays loaded</td>
-                              <td className="p-3"><span className="text-lime-700 font-bold bg-lime-50 px-2 py-0.5 rounded text-[10px]">Transit to T7</span></td>
-                            </tr>
-                            <tr>
-                              <td className="p-3 font-semibold text-black">OM-X2</td>
-                              <td className="p-3">
-                                <span className="flex items-center gap-1"><Battery className="w-4 h-4 text-emerald-600 fill-emerald-100 animate-pulse" /> 100%</span>
-                              </td>
-                              <td className="p-3 text-black/70">Empty</td>
-                              <td className="p-3"><span className="text-black/40 font-mono text-[10px]">Standby (charging)</span></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+                    <span className="text-[11px] font-bold text-black/50 uppercase tracking-wider">Labor Savings</span>
                   </div>
-                )}
-
-                {/* 2. KITCHEN ROLE */}
-                {activeRole === "kitchen" && (
-                  <div className="space-y-4 animate-in fade-in duration-300">
-                    <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Live Kitchen Orders</span>
-                    
-                    <div className="space-y-3">
-                      <div className="p-3.5 border border-black/5 rounded-2xl bg-white shadow-sm flex items-center justify-between">
-                        <div>
-                          <h5 className="text-xs font-bold text-black">Truffle Crunch fries</h5>
-                          <span className="text-[10px] text-black/40 block mt-0.5">Order #892 // Table 02</span>
-                        </div>
-                        <button
-                          onClick={() => alert("Simulating dispatch: Cabinet Locked. Unit OM-X1 en route to Table 02.")}
-                          className="px-4 py-2 bg-lime-600 hover:bg-lime-700 text-white rounded-xl text-[10px] font-bold uppercase transition-colors"
-                        >
-                          Dispatch OM-X1
-                        </button>
-                      </div>
-
-                      <div className="p-3.5 border border-black/5 rounded-2xl bg-white shadow-sm flex items-center justify-between opacity-60">
-                        <div>
-                          <h5 className="text-xs font-bold text-black">Harvest Gourmet Bowl</h5>
-                          <span className="text-[10px] text-black/40 block mt-0.5">Order #893 // Table 05</span>
-                        </div>
-                        <span className="text-[9px] font-mono text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full font-bold uppercase">
-                          Preparing
-                        </span>
-                      </div>
-                    </div>
+                  <div className="text-3xl lg:text-4xl font-black text-black tracking-tighter mb-2">+₹45k</div>
+                  <div className="text-[11px] text-black/40 font-medium">Monthly efficiency gain</div>
+                  
+                  {/* Decorative indicator line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gray-100">
+                    <div className="h-full bg-black transition-all duration-1000 ease-out" style={{ width: '60%' }} />
                   </div>
-                )}
+                </div>
 
-                {/* 3. STAFF ROLE */}
-                {activeRole === "staff" && (
-                  <div className="space-y-4 animate-in fade-in duration-300">
-                    <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Staff Notifications</span>
-                    
-                    <div className="space-y-3">
-                      {/* Active Alert */}
-                      <div className="p-4 border border-rose-100 rounded-2xl bg-rose-50/50 flex items-start gap-3">
-                        <AlertCircle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <h5 className="text-xs font-bold text-black">Service Call: Table 03</h5>
-                          <p className="text-[10px] text-black/50 mt-1 leading-normal">
-                            Diner requested water & extra napkins at Table 03.
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Info Alert */}
-                      <div className="p-4 border border-black/5 rounded-2xl bg-gray-50 flex items-start gap-3 opacity-80">
-                        <Terminal className="w-5 h-5 text-black/40 flex-shrink-0 mt-0.5" />
-                        <div>
-                          <h5 className="text-xs font-bold text-black">Robot OM-X2 Charging Status</h5>
-                          <p className="text-[10px] text-black/50 mt-1 leading-normal">
-                            Robot docked successfully. Battery charge: 94%.
-                          </p>
-                        </div>
-                      </div>
+                {/* Turnover Card */}
+                <div className="bg-lime-50/50 p-5 md:p-6 rounded-[24px] border border-lime-100 shadow-sm relative overflow-hidden group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-lime-100 flex items-center justify-center text-lime-700 group-hover:scale-110 transition-transform">
+                      <TrendingUp className="w-5 h-5" />
                     </div>
+                    <span className="text-[11px] font-bold text-lime-900/50 uppercase tracking-wider">Table Turnover</span>
                   </div>
-                )}
+                  <div className="text-3xl lg:text-4xl font-black text-lime-600 tracking-tighter mb-2">+₹28.5k</div>
+                  <div className="text-[11px] text-lime-900/40 font-medium">Increased daily capacity</div>
+                  
+                  {/* Decorative indicator line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-lime-100">
+                    <div className="h-full bg-lime-500 transition-all duration-1000 ease-out" style={{ width: '40%' }} />
+                  </div>
+                </div>
 
               </div>
+
+              {/* Note */}
+              <div className="bg-lime-50/50 border border-lime-200/50 rounded-2xl p-4 flex gap-3 items-start backdrop-blur-sm">
+                <CheckCircle2 className="w-5 h-5 text-lime-700 flex-shrink-0 mt-0.5" />
+                <p className="text-xs text-lime-900/70 font-medium leading-relaxed">
+                  Based on a typical 50-seat restaurant upgrading to a 2-robot ONOMEX fleet. Most partners see a full return on investment in under <strong className="text-lime-900">4 months</strong>.
+                </p>
+              </div>
+
             </div>
-
-            {/* No Technical Info Footer */}
-
           </div>
 
           {/* Card 3: Right column card (Spans 5 cols) — Owner Benefits Showcase */}
-          <div className="lg:col-span-5 rounded-[32px] bg-gray-200 border border-black/10 p-8 shadow-lg relative overflow-hidden flex flex-col justify-between min-h-[500px] group">
+          <div className="lg:col-span-5 rounded-[32px] bg-[#09090b] border border-white/10 p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] relative overflow-hidden flex flex-col justify-between min-h-[500px] group">
             
-            <div className="space-y-4">
-              <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Effortless Ownership</span>
-              <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
-                Run Your Floor <span className="text-black/40">on Autopilot.</span>
+            {/* Top Glow for 3D effect */}
+            <div className="absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            
+            <div className="space-y-4 relative z-10">
+              <span className="text-[10px] font-mono tracking-wider text-lime-400 uppercase block">Effortless Ownership</span>
+              <h3 className="text-2xl md:text-3xl font-black text-white leading-tight tracking-tight">
+                Run Your Floor <br/><span className="text-white/40">on Autopilot.</span>
               </h3>
-              <p className="text-xs text-black/50 leading-relaxed font-medium">
+              <p className="text-sm text-white/50 leading-relaxed font-medium">
                 Focus on your food and your guests. ONOMEX handles the logistics seamlessly, boosting your bottom line with zero extra effort.
               </p>
             </div>
 
-            {/* Interactive Benefits Grid */}
-            <div className="flex flex-col gap-3 mt-6 relative z-10">
-              <div className="p-4 rounded-2xl bg-white border border-black/[0.03] flex items-center gap-4 transition-all duration-300 hover:border-lime-500/30 hover:shadow-md hover:scale-[1.02] cursor-pointer group/card">
-                <div className="w-10 h-10 rounded-full bg-lime-50 flex items-center justify-center text-lime-700 transition-transform duration-500 group-hover/card:scale-110">
-                  <TrendingUp className="w-5 h-5" />
-                </div>
-                <div>
-                  <h5 className="text-xs font-bold text-black">Faster Table Turnover</h5>
-                  <p className="text-[10px] text-black/50 mt-0.5">Serve up to 30% more guests daily.</p>
-                </div>
-              </div>
+            {/* Metric-Driven UX Grid */}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-8 mt-8 relative z-10">
               
-              <div className="p-4 rounded-2xl bg-white border border-black/[0.03] flex items-center gap-4 transition-all duration-300 hover:border-emerald-500/30 hover:shadow-md hover:scale-[1.02] cursor-pointer group/card">
-                <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 transition-transform duration-500 group-hover/card:scale-110">
-                  <CheckCircle2 className="w-5 h-5" />
-                </div>
-                <div>
-                  <h5 className="text-xs font-bold text-black">Zero Order Errors</h5>
-                  <p className="text-[10px] text-black/50 mt-0.5">Direct from kitchen to table with perfect accuracy.</p>
-                </div>
+              {/* Metric 1 */}
+              <div>
+                <div className="text-5xl font-black text-lime-400 mb-2 tracking-tighter">30%</div>
+                <div className="text-[10px] font-bold text-white uppercase tracking-wider mb-1.5">Faster Turnover</div>
+                <p className="text-[11px] text-white/40 leading-relaxed">Serve more guests daily without expanding your floor plan.</p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white border border-black/[0.03] flex items-center gap-4 transition-all duration-300 hover:border-amber-500/30 hover:shadow-md hover:scale-[1.02] cursor-pointer group/card">
-                <div className="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-700 transition-transform duration-500 group-hover/card:scale-110">
-                  <Users className="w-5 h-5" />
-                </div>
-                <div>
-                  <h5 className="text-xs font-bold text-black">Happier Staff</h5>
-                  <p className="text-[10px] text-black/50 mt-0.5">Let your team focus on hospitality, not heavy lifting.</p>
-                </div>
+              {/* Metric 2 */}
+              <div>
+                <div className="text-5xl font-black text-emerald-400 mb-2 tracking-tighter">100%</div>
+                <div className="text-[10px] font-bold text-white uppercase tracking-wider mb-1.5">Order Accuracy</div>
+                <p className="text-[11px] text-white/40 leading-relaxed">Direct from kitchen to table. Zero dropped plates or delays.</p>
               </div>
+
+              {/* Metric 3 (Spans 2 columns) */}
+              <div className="col-span-2 bg-white/[0.03] border border-white/5 rounded-2xl p-5 mt-2">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center">
+                    <Users className="w-4 h-4 text-amber-400" />
+                  </div>
+                  <span className="text-[11px] font-bold text-white uppercase tracking-wider">Happier, Retained Staff</span>
+                </div>
+                <p className="text-xs text-white/50 leading-relaxed">
+                  Waitstaff walk an average of <strong className="text-white">4 fewer miles</strong> per shift. Your team focuses on hospitality and upselling, while robots do the heavy lifting.
+                </p>
+              </div>
+
             </div>
 
-            {/* Background decoration */}
-            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-lime-100/30 rounded-full blur-3xl pointer-events-none group-hover:bg-lime-200/40 transition-colors duration-700" />
+            {/* Ambient Background glow */}
+            <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-lime-500/10 rounded-full blur-[100px] pointer-events-none transition-opacity duration-700 group-hover:opacity-100 opacity-60" />
           </div>
 
         </div>

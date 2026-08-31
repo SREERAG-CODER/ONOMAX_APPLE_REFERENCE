@@ -131,57 +131,77 @@ export default function DinerExperience() {
                 style={{ transform: `translateX(calc(-${mobileCardIndex * 100}% - ${mobileCardIndex * 2}rem))` }}
               >
               
-                {/* Card 1: Huge Full-Width Card (Spans 12 cols) */}
-                <div className="w-full flex-shrink-0 lg:col-span-12 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[420px]">
-            {/* Left copy block */}
-            <div className="p-8 md:p-12 flex flex-col justify-between flex-1 max-w-xl">
-              <div className="space-y-4">
-                <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Instant Digital Menu</span>
-                <h3 className="text-2xl md:text-3xl font-black text-black leading-tight">
-                  Zero-App QR Ordering. <span className="text-black/40">No downloads.</span>
+                {/* Card 1: Full-Width — Luxury Editorial Card */}
+                <div className="w-full flex-shrink-0 lg:col-span-12 rounded-[32px] bg-[#F5F4F0] border border-black/[0.04] shadow-sm overflow-hidden flex flex-col md:flex-row justify-between items-stretch group min-h-[460px] relative">
+            
+            {/* Left copy block — Alabaster aesthetic */}
+            <div className="p-8 md:p-14 flex flex-col justify-between flex-1 max-w-xl relative z-10">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-[1px] bg-black/20" />
+                  <span className="text-[10px] font-mono tracking-[0.25em] text-black/40 uppercase font-bold">Instant Digital Menu</span>
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl lg:text-[42px] font-black text-[#1A2E27] leading-[1.05] tracking-tight">
+                  Zero-App QR Ordering. <br/>
+                  <span className="text-lime-700 italic font-medium pr-2">No downloads.</span>
                 </h3>
-                <p className="text-xs text-black/50 leading-relaxed font-medium">
+                
+                <p className="text-sm text-[#1A2E27]/60 leading-relaxed font-medium max-w-md pt-2">
                   Diners scan a sleek table-specific QR code to launch the menu instantly. No app store downloads, registrations, or login friction. Allergen-filtering categories and high-impact culinary food visuals make selections fast, direct, and satisfying.
                 </p>
               </div>
-              <div className="pt-6">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-lime-700">
+
+              <div className="pt-8 mt-4 border-t border-black/5">
+                <span className="inline-flex items-center gap-2 text-xs font-bold text-[#1A2E27] uppercase tracking-wider group-hover:text-lime-700 transition-colors duration-300">
                   Ready to deploy on any floor 
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </div>
             </div>
-            {/* Right image block */}
-            <div className="relative flex-1 min-h-[300px] md:min-h-auto overflow-hidden">
+
+            {/* Right image block — Edge to edge, cinematic */}
+            <div className="relative flex-1 min-h-[350px] md:min-h-auto overflow-hidden rounded-l-[32px] border-l border-black/5 shadow-[-10px_0_30px_rgba(0,0,0,0.05)]">
               <Image
                 src="/qr-menu-scanning.png"
                 alt="Scanning QR code to view digital menu"
                 fill
-                className={`object-cover transition-all duration-700 ${mobileCardIndex === 0 ? "grayscale-0" : "grayscale"} lg:grayscale group-hover:scale-105 lg:group-hover:grayscale-0`}
+                className="object-cover transition-transform duration-1000 group-hover:scale-[1.03] grayscale-[20%]"
               />
+              {/* Elegant warm overlay to match the alabaster */}
+              <div className="absolute inset-0 bg-[#F5F4F0]/10 mix-blend-multiply pointer-events-none" />
             </div>
           </div>
 
-          {/* Card 2: Left column card (Spans 6 cols) */}
-          <div className="w-full flex-shrink-0 lg:col-span-6 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-between group min-h-[500px] mb-8 lg:mb-0">
-            <div className="p-8 space-y-4">
-              <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Instant Scan & Checkout</span>
-              <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
-                Scan. Select. <span className="text-black/40">Pay. Done.</span>
+          {/* Card 2: Left column card (Spans 6 cols) — Luxury Editorial */}
+          <div className="w-full flex-shrink-0 lg:col-span-6 rounded-[32px] bg-white border border-black/[0.04] p-8 shadow-sm relative overflow-hidden flex flex-col justify-between group min-h-[500px] mb-8 lg:mb-0">
+            
+            <div className="space-y-5 mb-8 relative z-10">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-[1px] bg-black/20" />
+                <span className="text-[10px] font-mono tracking-[0.25em] text-black/40 uppercase font-bold">Instant Scan & Checkout</span>
+              </div>
+              
+              <h3 className="text-2xl md:text-3xl font-black text-[#1A2E27] leading-tight tracking-tight">
+                Scan. Select. <br/>
+                <span className="text-lime-700 italic font-medium">Pay. Done.</span>
               </h3>
-              <p className="text-xs text-black/50 leading-relaxed font-medium">
+              
+              <p className="text-sm text-[#1A2E27]/60 leading-relaxed font-medium">
                 Accepts Apple Pay, instant credit cards, and local payment methods natively. Payments authorize instantly and route immediately to the kitchen station.
               </p>
             </div>
             
             {/* Realistic visual overlay showing hand scanning QR code */}
-            <div className="relative flex-1 w-full mt-8 overflow-hidden rounded-b-[32px]">
+            <div className="relative flex-1 w-full mt-4 overflow-hidden rounded-b-[24px] rounded-t-[8px] bg-black">
               <Image
                 src="/qr-ordering.png"
                 alt="Scanning table QR code"
                 fill
-                className={`object-cover transition-all duration-700 ${mobileCardIndex === 1 ? "grayscale-0" : "grayscale"} lg:grayscale group-hover:scale-105 lg:group-hover:grayscale-0`}
+                className="object-cover transition-transform duration-1000 group-hover:scale-[1.03] grayscale-[20%] group-hover:grayscale-0"
               />
+              <div className="absolute inset-0 bg-[#F5F4F0]/10 mix-blend-multiply pointer-events-none" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.3)_100%)] pointer-events-none" />
             </div>
           </div>
 
@@ -198,15 +218,39 @@ export default function DinerExperience() {
             </button>
           </div>
 
-          {/* Card 3: Phone Simulator — always visible, participates in desktop grid */}
-          <div className="lg:col-span-6 rounded-[32px] bg-gray-200 border border-black/10 shadow-lg p-8 flex flex-col items-center justify-center relative overflow-hidden min-h-[500px]">
-            <div className="absolute top-6 left-8 text-left">
-              <span className="text-[10px] font-mono tracking-wider text-black/40 uppercase block">Live Demo</span>
-              <h4 className="text-xs font-bold text-black uppercase tracking-wider mt-0.5">Diner Ordering Flow</h4>
+          {/* Card 3: Phone Simulator — Luxury Editorial */}
+          <div className="lg:col-span-6 rounded-[32px] bg-[#F5F4F0] border border-black/[0.04] shadow-sm p-8 flex flex-col items-center justify-center relative overflow-hidden min-h-[500px]">
+            
+            {/* Elegant Background Texture & Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+              {/* Massive subtle typography watermark */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center flex items-center justify-center">
+                <span className="text-[180px] lg:text-[240px] font-black text-black/[0.02] tracking-tighter leading-none select-none">
+                  DEMO
+                </span>
+              </div>
+              
+              {/* Subtle ambient glowing orbs */}
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-lime-600/[0.03] rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3" />
+              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-600/[0.03] rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3" />
+              
+              {/* Fine architectural dot grid */}
+              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, black 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+            </div>
+
+            {/* Luxury Title Block */}
+            <div className="absolute top-8 left-10 text-left z-10 w-full pr-20">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-[1px] bg-[#1A2E27]/20" />
+                <span className="text-[10px] font-mono tracking-[0.25em] text-[#1A2E27]/50 uppercase font-bold">Interactive Experience</span>
+              </div>
+              <h4 className="text-xl md:text-2xl font-black text-[#1A2E27] tracking-tight mt-3">
+                Diner <span className="text-lime-700 italic font-medium">Ordering Flow</span>
+              </h4>
             </div>
             
             {/* Phone Case Frame */}
-            <div className="relative w-[340px] h-[670px] rounded-[48px] border-[10px] border-black bg-white shadow-2xl overflow-hidden flex flex-col justify-between mt-14 scale-90 origin-top">
+            <div className="relative w-[340px] h-[670px] rounded-[48px] border-[10px] border-black bg-white shadow-[0_30px_60px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col justify-between mt-20 scale-90 origin-top z-10">
               
               {/* Phone Notch */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-30 flex items-center justify-center">
